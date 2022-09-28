@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# start Tor snowflake proxy
+#
+# righttoprivacy[at]tutanota.com
+#
+# Gitea Onion: http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/snowflake-tor-service
+#
+
+# CHANGE BELOW DIRECTORY PATH TO MATCH YOUR SNOWFLAKE PROXY EXECUTABLE LOCATION
+snowflakecmd=$(/home/snowflake/snowflake/proxy/proxy -log /home/snowflake/snow.log)
+
+echo -e "STARTING TOR SNOWFLAKE PROXY...\n"
+
+snowflakecmd || echo -e "FAILED TO START SNOWFLAKE\n"
+

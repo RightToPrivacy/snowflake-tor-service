@@ -1,0 +1,14 @@
+[Unit]
+Description=Tor Snowflake Proxy Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/start-snowflake		# direct path to start-snowflake start script
+ExecStop=/usr/bin/killall -9 proxy
+ExecReload=/usr/bin/killall -9 proxy && /usr/bin/start-snowflake
+User=snowflake
+Group=snowflake
+
+[Install]
+WantedBy=multi-user.target
+
