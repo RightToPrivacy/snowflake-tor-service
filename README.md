@@ -10,6 +10,12 @@ To make it easy to run a dedicated snowflake on any Linux device (phones, single
 
 * Golang (install this first or you won't be able to build the source)
 
+* torify (clones service files atm from a Gitea onion)
+
+* tor client started before running install.sh (torify relies on this)
+
+---
+
 ## GET STARTED
 
 You only need to download the install.sh on machine you wish to turn into a snowflake server
