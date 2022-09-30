@@ -6,7 +6,7 @@ To make it easy to run a dedicated snowflake on any Linux device (phones, single
 
 ---
 
-## REQUIREMENTS (at this time relies on Gitea Onion to revtrieve service files)
+## REQUIREMENTS 
 
 * Golang (install this first or you won't be able to build the source)
 
@@ -24,6 +24,10 @@ To make it easy to run a dedicated snowflake on any Linux device (phones, single
 That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy service.
 
 *Enjoy helping users around the world connect to Tor*
+
+---
+
+Try it on your Linux laptop, server, tablet, phone... Phones likely make ideal candidate with dynamic IP, changing locations.
 
 ---
 
