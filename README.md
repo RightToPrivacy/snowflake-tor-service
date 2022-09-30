@@ -1,35 +1,27 @@
-# snowflake-torproxy-systemd
+# snowflake-torproxy-service
 
-Service file and start script for Tor Snowflake Proxy (starts every boot under default 'snowflake' user)
+Automated Tor Snowflake Source Download, Building, and service install for Tor Snowflake Proxy (starts every boot under default 'snowflake' user)
 
 To make it easy to run a dedicated snowflake on any Linux device (phones, singleboard computer, laptop, servers etc)
 
 ---
 
-## REQUIREMENTS
+## REQUIREMENTS (at this time relies on Gitea Onion to revtrieve service files)
 
 * Golang (install this first or you won't be able to build the source)
 
-* torify (clones service files atm from a Gitea onion)
-
-* tor client started before running install.sh (torify relies on this)
-
+* systemd (for boot / service)
 ---
 
 ## GET STARTED
 
-You only need to download the install.sh on machine you wish to turn into a snowflake server
-
-(the rest of downloading and building is automated for you)
-
-**FIRST:** Install tor client and started. Make sure to have git, torify installed before running install.sh..
+**FIRST:** Download this snowflake-tor-service to the machine you wish to create Snowflake Tor proxy service on
 
 **NEXT RUN:**
 
-    chmod +x install.sh
-    sudo ./install.sh
+    sudo bash install.sh
 
-That's it.
+That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy service.
 
 *Enjoy helping users around the world connect to Tor*
 
@@ -37,11 +29,11 @@ That's it.
 
 ## COMMANDS (POST INSTALL)
 
-**START SNOWFLAKE (install.sh automatically starts for you):**
+**STARTING SNOWFLAKE (install.sh automatically starts for you):**
 
     sudo systemctl start snowflake.service
 
-**STOP SNOWFLAKE:**
+**STOPPING SNOWFLAKE:**
 
     sudo systemctl stop snowflake.service
 
@@ -67,13 +59,21 @@ That's it.
 
 ### GIT REPOSITORY LOCATION (TOR ANON GIT SERVICE) 
 
-At the time of writing this, it is found on the following Gitea Onion (other locations in future):
+At the time of writing this, found on the following Gitea Onion / Gitlab / Github:
 
-http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/snowflake-tor-service
+Main Location (checked more frequently): http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/snowflake-tor-service
+
+https://github.com/RightToPrivacy/snowflake-tor-service (uploaded here but not main)
+
+https://gitlab.com/Aresesi/snowflake-tor-service/ (uploaded here but not main)
+
+---
 
 **Notice Problem With This?** File an issue at above location (use Tor browser)
 
-**BLOG:** https://buymeacoffee.com/politictech/posts (public)
+Or email righttoprivacy[at]tutanota.com
+
+**BLOG POST:** https://www.buymeacoffee.com/politictech/fully-automated-tor-snowflake-proxy-server-installer-any-linux-device (public)
 
 ---
 

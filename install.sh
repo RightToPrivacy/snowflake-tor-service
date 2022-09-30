@@ -7,8 +7,7 @@
 #
 # righttoprivacy[at]tutanota.com
 # 
-# Git Onion: http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/snowflake-tor-service
-# Blog: https://buymeacoffee.com/politictech/posts
+# Gitea Onion: http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/snowflake-tor-service
 #
 
 # Text Colors
@@ -74,9 +73,6 @@ function buildsnow() {
 
 # CREATE SYSTEMD SERVICE UNDER SNOWFLAKE USER; START; ENABLE FOR BOOT;
 function makeservice() {
-	cd /home/snowflake
-	torify git clone http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/snowflake-tor-service.git || echo -e "MAKE SURE TOR IS RUNNING!${ENDCOLOR}\n"
-	cd /home/snowflake/snowflake-tor-service
 	sudo cp start-snowflake /usr/bin/start-snowflake
 	chmod +x /usr/bin/start-snowflake
 	cp snowflake.service /etc/systemd/system
@@ -87,10 +83,10 @@ function makeservice() {
 
 # CREATE SNOWFLAKE USER FOR OUR SERVICE
 echo -e "${GREEN}ADDING 'snowflake' USER TO RUN SNOWFLAKE SERVICE...${ENDCOLOR}\n" && sleep .5
-adduser snowflake
+useradd -m --shell /usr/bin/nologin snowflake || echo -e "${RED}FAILED TO ADD USER SNOWFLAKE${ENDCOLOR}\n" 
 
 # BUILD TOR SNOWFLAKE SOURCE
-buildsnow || echo -e "${RED}FAILED TO BUILD SNOWFLAKE PROXY SOURCE. DO YOU HAVE GOLANG?${ENDCOLOR}\n"
+buildsnow || echo -e "${RED}FAILED TO BUILD SNOWFLAKE PROXY SOURCE. DO YOU HAVE GOLANG?${ENDCOLOR}\n"  
 
 makeservice && echo -e "${GREEN}INSTALL COMPLETED.${ENDCOLOR}\n" || echo -e "${RED}SNOWFLAKE SERVICE INSTALL FAILED${ENDCOLOR}\n"
 
