@@ -63,6 +63,12 @@ EOF
 
 sleep .5
 
+# MOVE START SNOWFLAKE SCRIPT MAKE EXEC
+cp start-snowflake /usr/bin/start-snowflake
+chmod +x /usr/bin/start-snowflake
+cp snowflake.service /etc/systemd/system
+
+
 # DOWNLOAD AND BUILD SNOWFLAKE SOURCE
 function buildsnow() {
 	cd /home/snowflake && sudo -u snowflake git clone https://git.torproject.org/pluggable-transports/snowflake.git
@@ -73,9 +79,6 @@ function buildsnow() {
 
 # CREATE SYSTEMD SERVICE UNDER SNOWFLAKE USER; START; ENABLE FOR BOOT;
 function makeservice() {
-	sudo cp start-snowflake /usr/bin/start-snowflake
-	chmod +x /usr/bin/start-snowflake
-	cp snowflake.service /etc/systemd/system
 	systemctl daemon-reload
 	systemctl enable snowflake.service
 	systemctl start snowflake.service || echo -e "{RED}FAILED TO START SNOWFLAKE SERVICE${ENDCOLOR}\n"	
