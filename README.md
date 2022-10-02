@@ -58,7 +58,8 @@ That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy 
 
 ---
 
-Video Demo: https://youtu.be/UUVY-SzlxAM
+Video Demo: https://youtu.be/UUVY-SzlxA
+
 Blog Post: https://www.buymeacoffee.com/politictech/fully-automated-tor-snowflake-proxy-server-installer-any-linux-device
 
 ---
