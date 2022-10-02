@@ -2,15 +2,18 @@
 
 Automated Tor Snowflake Source Download, Building, and service install for Tor Snowflake Proxy (starts every boot under default 'snowflake' user)
 
-To make it easy to run a dedicated snowflake on any Linux device (phones, singleboard computer, laptop, servers etc)
+Single command makes it as easy as possible to start running a dedicated snowflake: on any Linux device (phones, singleboard computer, laptop, servers etc)
 
 ---
+
+#### VIDEO DEMO (in 1 minute everything is finished):
+https://youtu.be/UUVY-SzlxAM
 
 ## REQUIREMENTS 
 
 * Golang (install this first or you won't be able to build the source)
 
-* systemd (for boot / service)
+* systemd based Linux distro (for boot / service)
 ---
 
 ## GET STARTED
