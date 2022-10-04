@@ -25,7 +25,7 @@ fi
 # CHECK FOR GOLANG;
 if ! command -v go &> /dev/null
 then
-	echo -e "${RED}go not found. Tor Snowflake proxy requires it to build source. Install golang pkg and rerun install.sh..${ENDCOLOR}" && sleep .75
+	echo -e "${RED}go not found. Tor Snowflake proxy requires Go 1.13+ to build source. Install golang pkg and rerun install.sh..${ENDCOLOR}" && sleep .75
 	exit
 else
     echo -e "${GREEN}golang is installed. Continuing.${ENDCOLOR}" && sleep .5
@@ -64,10 +64,11 @@ EOF
 sleep .5
 
 # MOVE START SNOWFLAKE SCRIPT MAKE EXEC
-cp start-snowflake /usr/bin/start-snowflake
-chmod +x /usr/bin/start-snowflake
-cp snowflake.service /etc/systemd/system
-
+function mvFiles() {
+	cp start-snowflake /usr/bin/start-snowflake
+	chmod +x /usr/bin/start-snowflake
+	cp snowflake.service /etc/systemd/system
+}
 
 # DOWNLOAD AND BUILD SNOWFLAKE SOURCE
 function buildsnow() {
@@ -81,8 +82,30 @@ function buildsnow() {
 function makeservice() {
 	systemctl daemon-reload
 	systemctl enable snowflake.service
-	systemctl start snowflake.service || echo -e "{RED}FAILED TO START SNOWFLAKE SERVICE${ENDCOLOR}\n"	
+	systemctl restart snowflake.service || echo -e "${RED}FAILED TO START SNOWFLAKE SERVICE${ENDCOLOR}\n"	
 }
+
+# UPGRADE -- INITIAL TEST - MAY CHANGE THIS - backs up original to /home/snowflake/snowflake_backup.tar.xz before upgrade
+# run sudo bash install.sh upgrade to use upgrade option (may be modified/
+if [ "$1" == 'upgrade' ]; then
+	echo -e "${BLUE}Upgrading Tor Snowflake Proxy...${ENDCOLOR}\n" && sleep .5
+	echo -e "${BLUE}Shutting Down Snowflake Server...${ENDCOLOR}\n" && sleep .5
+	systemctl stop snowflake
+	echo -e "${BLUE}Backing Up Original...${ENDCOLOR}\n"
+	# MOVE INTO DIRECTORY AND BACKUP ORIGINAL
+	cd /home/snowflake
+	tar -cJf snowflake_backup.tar.xz snowflake --remove-files || echo -e "${RED} DO YOU HAVE XZ INSTALLED?${ENDCOLOR}\n"
+	echo -e "${BLUE}Downloading Latest...${ENDCOLOR}\n"
+	sudo -u snowflake git clone https://git.torproject.org/pluggable-transports/snowflake.git
+	echo -e "${BLUE}Now Building...${ENDCOLOR}\n" && sleep .5
+	cd snowflake/proxy
+	sudo -u snowflake go build /home/snowflake/snowflake/proxy/ && makeservice && echo -e "${GREEN}UPGRADE COMPLETE. EXITING.${ENDCOLOR}\n"
+	exit 0
+
+fi
+
+# MOVE FILES MAKE EXEC
+mvFiles
 
 # CREATE SNOWFLAKE USER FOR OUR SERVICE
 echo -e "${GREEN}ADDING 'snowflake' USER TO RUN SNOWFLAKE SERVICE...${ENDCOLOR}\n" && sleep .5

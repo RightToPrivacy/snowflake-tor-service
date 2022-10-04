@@ -54,6 +54,15 @@ That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy 
 
 ---
 
+### NEW (UPGRADE) - (initial revision)
+
+    sudo bash install.sh upgrade
+
+The above command is the initial upgrade option, first backing up original (in case unexpected problems occur),
+Then downloads the latest Snowflake Proxy Source from Tor Project, building it again, and restarting service automatically.
+
+---
+
 **LOGFILE (BY DEFAULT) IN:** /home/snowflake/snow.log
 
 ---
