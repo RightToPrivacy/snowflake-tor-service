@@ -85,7 +85,7 @@ function makeservice() {
 	systemctl restart snowflake.service || echo -e "${RED}FAILED TO START SNOWFLAKE SERVICE${ENDCOLOR}\n"	
 }
 
-# UPGRADE -- INITIAL TEST - MAY CHANGE THIS - backs up original to /home/snowflake/snowflake_backup.tar.xz before upgrade
+# UPGRADE -- INITIAL TEST - NOT YET COMPLETE - backs up original to /home/snowflake/snowflake_backup.tar.xz before upgrade
 # run sudo bash install.sh upgrade to use upgrade option (may be modified/
 if [ "$1" == 'upgrade' ]; then
 	echo -e "${BLUE}Upgrading Tor Snowflake Proxy...${ENDCOLOR}\n" && sleep .5

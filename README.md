@@ -6,6 +6,17 @@ Single command install on any Linux device (phones, singleboard computer, laptop
 
 ---
 
+## PURPOSE
+
+Yet another option for running Tor Snowflake Proxy (dedicated standalone service).
+
+The install.sh script is a fully automated installer, now offering 'upgrade' as an option.
+
+Turn any (systemd based) Linux distribution device into a dedicated Tor Snowflake Proxy to help 
+internet censored users connect to Tor.
+
+---
+
 ## REQUIREMENTS 
 
 * Golang (install this first or you won't be able to build the source)
@@ -54,12 +65,11 @@ That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy 
 
 ---
 
-### NEW (UPGRADE) - (initial revision)
+### COMING UP: UPGRADE (initial - not complete yet)
+
+(this isn't complete - but for now redownloads latest, build if you need it to)
 
     sudo bash install.sh upgrade
-
-The above command is the initial upgrade option, first backing up original (in case unexpected problems occur),
-Then downloads the latest Snowflake Proxy Source from Tor Project, building it again, and restarting service automatically.
 
 ---
 
