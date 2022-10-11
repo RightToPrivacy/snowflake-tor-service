@@ -10,13 +10,13 @@
 # Gitea Onion: http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/snowflake-tor-service
 #
 
-# Text Colors
+# TEXT COLORS
 export BLUE='\033[1;94m'
 export GREEN='\033[1;92m'
 export RED='\033[1;91m'
 export ENDCOLOR='\033[1;00m'
 
-
+# CHECK IF ABLE TO INSTALL SERVICE
 if [ "$EUID" -ne 0 ]
   then echo -e "${RED}Must Run As root. Exiting.${ENDCOLOR}\n"
   exit
@@ -78,20 +78,19 @@ function buildsnow() {
 	sudo -u snowflake go build /home/snowflake/snowflake/proxy/
 }
 
-# CREATE SYSTEMD SERVICE UNDER SNOWFLAKE USER; START; ENABLE FOR BOOT;
+# CREATE SYSTEMD SERVICE UNDER SNOWFLAKE USER; RESTART; ENABLE FOR BOOT;
 function makeservice() {
 	systemctl daemon-reload
 	systemctl enable snowflake.service
 	systemctl restart snowflake.service || echo -e "${RED}FAILED TO START SNOWFLAKE SERVICE${ENDCOLOR}\n"	
 }
 
-# UPGRADE -- INITIAL TESTS
-# run sudo bash install.sh upgrade to use upgrade option (may be modified/
+# UPGRADE TO LATEST SNOWFLAKE 
+# run: 'sudo bash install.sh upgrade' to upgrade your snowflake service to latest
 if [ "$1" == 'upgrade' ]; then
 	echo -e "${BLUE}Shutting Down Snowflake Server...${ENDCOLOR}\n" && sleep .5
 	systemctl stop snowflake
-	# MOVE INTO DIRECTORY 
-	cd /home/snowflake
+	cd /home/snowflake								
 	# DOWNLOAD CHANGES
 	echo -e "${BLUE}Downloading Latest...${ENDCOLOR}\n"
 	cd /home/snowflake/snowflake
@@ -107,7 +106,7 @@ fi
 # MOVE FILES MAKE EXEC
 mvFiles
 
-# CREATE SNOWFLAKE USER FOR OUR SERVICE
+# CREATE SNOWFLAKE USER FOR SERVICE
 echo -e "${GREEN}ADDING 'snowflake' USER TO RUN SNOWFLAKE SERVICE...${ENDCOLOR}\n" && sleep .5
 useradd -m --shell /sbin/nologin snowflake || echo -e "${RED}FAILED TO ADD USER SNOWFLAKE${ENDCOLOR}\n" 
 
