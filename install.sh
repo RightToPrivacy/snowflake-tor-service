@@ -110,7 +110,7 @@ mvFiles
 
 # CREATE SNOWFLAKE USER FOR OUR SERVICE
 echo -e "${GREEN}ADDING 'snowflake' USER TO RUN SNOWFLAKE SERVICE...${ENDCOLOR}\n" && sleep .5
-useradd -m --shell /usr/bin/nologin snowflake || echo -e "${RED}FAILED TO ADD USER SNOWFLAKE${ENDCOLOR}\n" 
+useradd -m --shell /sbin/nologin snowflake || echo -e "${RED}FAILED TO ADD USER SNOWFLAKE${ENDCOLOR}\n" 
 
 # BUILD TOR SNOWFLAKE SOURCE
 buildsnow || echo -e "${RED}FAILED TO BUILD SNOWFLAKE PROXY SOURCE. DO YOU HAVE GOLANG 1.13+?${ENDCOLOR}\n"  
