@@ -35,6 +35,8 @@ internet censored users connect to Tor.
 
 That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy service.
 
+---
+
 *Enjoy helping users around the world connect to Tor*
 
 ---
@@ -65,9 +67,7 @@ That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy 
 
 ---
 
-### COMING UP: UPGRADE (initial - not complete yet)
-
-(this isn't complete - but for now redownloads latest, build if you need it to)
+### UPGRADE (initial revision)
 
     sudo bash install.sh upgrade
 
