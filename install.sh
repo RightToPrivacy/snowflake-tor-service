@@ -85,22 +85,21 @@ function makeservice() {
 	systemctl restart snowflake.service || echo -e "${RED}FAILED TO START SNOWFLAKE SERVICE${ENDCOLOR}\n"	
 }
 
-# UPGRADE -- INITIAL TEST - MSG REMOVED WHEN WELL TESTED 
+# UPGRADE -- INITIAL TESTS
 # run sudo bash install.sh upgrade to use upgrade option (may be modified/
 if [ "$1" == 'upgrade' ]; then
-	echo -e "${BLUE}Upgrading Tor Snowflake Proxy...${ENDCOLOR}\n" && sleep .5
 	echo -e "${BLUE}Shutting Down Snowflake Server...${ENDCOLOR}\n" && sleep .5
 	systemctl stop snowflake
-	echo -e "${BLUE}Backing Up Original...${ENDCOLOR}\n"
-	# MOVE INTO DIRECTORY AND BACKUP ORIGINAL
+	# MOVE INTO DIRECTORY 
 	cd /home/snowflake
-	###tar -cJf snowflake_backup.tar.xz snowflake --remove-files || echo -e "${RED} DO YOU HAVE XZ INSTALLED?${ENDCOLOR}\n"
+	# DOWNLOAD CHANGES
 	echo -e "${BLUE}Downloading Latest...${ENDCOLOR}\n"
 	cd /home/snowflake/snowflake
 	sudo -u snowflake git pull
+	# BUILD NEW SNOWFLAKE UPGRADE
 	echo -e "${BLUE}Now Building...${ENDCOLOR}\n" && sleep .5
 	cd proxy
-	go build -buildvcs=false && makeservice && echo -e "${GREEN}UPGRADE COMPLETE. EXITING.${ENDCOLOR}\n"
+	sudo -u snowflake go build -buildvcs=false && makeservice && echo -e "${GREEN}UPGRADE COMPLETE. EXITING.${ENDCOLOR}\n"
 	exit
 
 fi
