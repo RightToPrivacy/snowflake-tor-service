@@ -31,9 +31,13 @@ internet censored users connect to Tor.
 
 **NEXT RUN:**
 
+    cd snowflake-tor-service
+
     sudo bash install.sh
 
 That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy service.
+
+#### IMPORTANT: Make Sure You Are Inside Download Directory Before Running: sudo bash install.sh
 
 ---
 
