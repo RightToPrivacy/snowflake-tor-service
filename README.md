@@ -25,9 +25,21 @@ internet censored users connect to Tor.
 
 ---
 
-## GET STARTED
+## GET STARTED HERE
 
-**FIRST:** Download this snowflake-tor-service to the machine you wish to create Snowflake Tor proxy service on
+**FIRST Make Sure Golang Is Installed On Your System (To Build)
+
+**Get Golang On Debian Based Distro:
+
+    apt install golang
+    
+**Get Golang On Arch Based Distro (EndeavourOS, Manjaro, Artix, Arch):
+
+    pacman -S golang
+    
+**NEXT: Download This (snowflake-tor-service)
+
+    git clone: https://github.com/RightToPrivacy/snowflake-tor-service.git
 
 **NEXT RUN:**
 
