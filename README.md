@@ -27,17 +27,17 @@ internet censored users connect to Tor.
 
 ## GET STARTED HERE
 
-**FIRST Make Sure Golang Is Installed On Your System (To Build)
+**FIRST Make Sure Golang Is Installed On Your System (To Build)**
 
-**Get Golang On Debian Based Distro:
+**Get Golang On Debian Based Distro:**
 
     apt install golang
     
-**Get Golang On Arch Based Distro (EndeavourOS, Manjaro, Artix, Arch):
+**Get Golang On Arch Based Distro (EndeavourOS, Manjaro, Artix, Arch):**
 
     pacman -S golang
     
-**NEXT: Download This (snowflake-tor-service)
+**NEXT: Download This (snowflake-tor-service)**
 
     git clone: https://github.com/RightToPrivacy/snowflake-tor-service.git
 
