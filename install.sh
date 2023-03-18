@@ -96,9 +96,12 @@ if [ "$1" == 'upgrade' ]; then
 	cd /home/snowflake/snowflake
 	sudo -u snowflake git pull
 	# BUILD NEW SNOWFLAKE UPGRADE
-	echo -e "${BLUE}Now Building...${ENDCOLOR}\n" && sleep .5
 	cd proxy
-	sudo -u snowflake go build -buildvcs=false && makeservice && echo -e "${GREEN}UPGRADE COMPLETE. EXITING.${ENDCOLOR}\n"
+	sudo -u snowflake go build -buildvcs=false && makeservice && sleep .5
+	echo -e "${GREEN}UPGRADE COMPLETE.${ENDCOLOR}\n" && sleep 1
+	echo -e "${BLUE}*** RELOADING SNOWFLAKE ***${ENDCOLOR}\n" && sleep 1
+	systemctl restart snowflake
+	echo -e "${GREEN}DONE.${ENDCOLOR}\n" && sleep .5
 	exit
 
 fi
