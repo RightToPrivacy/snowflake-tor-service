@@ -39,7 +39,11 @@ internet censored users connect to Tor.
     
 **NEXT: Download This (snowflake-tor-service)**
 
-    git clone https://github.com/RightToPrivacy/snowflake-tor-service.git
+**LOCATION 1:** Download From Gitea Onion - http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/snowflake-tor-service
+
+Or:
+
+    git clone: https://github.com/RightToPrivacy/snowflake-tor-service.git
 
 **NEXT RUN:**
 
@@ -47,9 +51,9 @@ internet censored users connect to Tor.
 
     sudo bash install.sh
 
-That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy service.
+That's it. In a couple minutes (or less) you should have a running Tor Snowflake Proxy service.
 
-#### IMPORTANT: Make Sure You Are Inside Download Directory Before Running Step: **sudo bash install.sh** 
+#### IMPORTANT: Make Sure You Are Inside Download Directory Before Running: sudo bash install.sh
 
 ---
 
@@ -85,6 +89,10 @@ That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy 
 
 ### UPGRADE (initial revision)
 
+**FIRST:** move into snowflake-tor-service dir with install.sh (from terminal)
+
+**NEXT RUN:**
+
     sudo bash install.sh upgrade
 
 ---
@@ -96,6 +104,14 @@ That's it. In 3 minutes (or less) you should have a running Tor Snowflake Proxy 
 Video Demo: https://youtu.be/UUVY-SzlxA
 
 Blog Post: https://www.buymeacoffee.com/politictech/fully-automated-tor-snowflake-proxy-server-installer-any-linux-device
+
+---
+
+**CONTACT**
+
+Onionmail: righttoprivacy@czw66gso77uiz3yxilo36rqramjb4mmvv6dsnianev6achfehzpsilqd.onion
+
+righttoprivacy[at]tutanota.com
 
 ---
 
