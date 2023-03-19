@@ -15,6 +15,8 @@ The install.sh script is a fully automated installer, now offering 'upgrade' as 
 Turn any (systemd based) Linux distribution device into a dedicated Tor Snowflake Proxy to help 
 internet censored users connect to Tor.
 
+(there are other options like the Tor Snowflake docker - this is just yet another option for users)
+
 ---
 
 ## REQUIREMENTS 
@@ -101,7 +103,7 @@ That's it. In a couple minutes (or less) you should have a running Tor Snowflake
 
 ---
 
-Video Demo: https://youtu.be/UUVY-SzlxA
+Video Demo: https://www.youtube.com/watch?v=UUVY-SzlxAM
 
 Blog Post: https://www.buymeacoffee.com/politictech/fully-automated-tor-snowflake-proxy-server-installer-any-linux-device
 
