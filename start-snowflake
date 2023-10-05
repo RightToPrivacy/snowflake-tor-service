@@ -12,5 +12,5 @@ snowflakecmd=$(/home/snowflake/snowflake/proxy/proxy -log /home/snowflake/snow.l
 
 echo -e "STARTING TOR SNOWFLAKE PROXY...\n"
 
-snowflakecmd || echo -e "FAILED TO START SNOWFLAKE\n"
+$snowflakecmd || echo -e "FAILED TO START SNOWFLAKE\n"
 
