@@ -2,10 +2,15 @@
 #
 # start Tor snowflake proxy
 #
-# righttoprivacy[at]tutanota.com
+# righttoprivacy[at]i2pmail.org / righttoprivacy[at]tutanota.com
 #
 # Gitea Onion: http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/snowflake-tor-service
-# (latest found at above gitea tor onion - main location for this)
+# Public Blog: https://bmc.link/politictech/posts
+#
+# XMR:48qtspi5En44mJZLeiMoHYFEmuJfQYb5DLQxLDr7d1NXc53XaAvoT8PS3wBrhEc3VY1wxu5Rgw6oKBYgahpSAYnpHntbQNM
+# CashApp: https://cash.app/$HumanRightsTech
+#
+# FEEDBACK WELCOME - any issues, please file issue or email
 #
 
 # CHANGE BELOW DIRECTORY PATH TO MATCH YOUR SNOWFLAKE PROXY EXECUTABLE LOCATION

@@ -4,6 +4,8 @@ Automated Tor Snowflake Source Download, Building, and service install for Tor S
 
 Single command install on any Linux device (phones, singleboard computer, laptop, servers etc)
 
+RUN install.sh FROM TERMINAL INSIDE snowflake-tor-service DIR
+
 ---
 
 ## PURPOSE
@@ -105,14 +107,13 @@ That's it. In a couple minutes (or less) you should have a running Tor Snowflake
 
 Video Demo: https://www.youtube.com/watch?v=UUVY-SzlxAM
 
-Blog Post: https://www.buymeacoffee.com/politictech/fully-automated-tor-snowflake-proxy-server-installer-any-linux-device
+Blog Post: https://bmc.link/politictech/fully-automated-tor-snowflake-proxy-server-installer-any-linux-device
 
 ---
 
 **CONTACT**
 
-Onionmail: righttoprivacy@czw66gso77uiz3yxilo36rqramjb4mmvv6dsnianev6achfehzpsilqd.onion
-
+righttoprivacy[at]i2pmail.org
 righttoprivacy[at]tutanota.com
 
 ---
